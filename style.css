@@ -1,38 +1,36 @@
-
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(to right, #3a7bd5, #3a6073);
+  color: white;
   text-align: center;
-}
-
-header {
-  background-color: #222;
-  color: white;
-  padding: 30px 0;
-}
-
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-top: 20px;
-}
-
-.skills, .projects {
-  padding: 20px;
-  background-color: white;
-  margin: 20px;
-  border-radius: 8px;
-}
-
-footer {
-  background-color: #222;
-  color: white;
-  padding: 10px;
+  padding: 50px;
 }
 
 .container {
-  padding: 30px;
+  max-width: 400px;
+  margin: auto;
+  background-color: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #00c6ff;
+  color: white;
+  cursor: pointer;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
 }

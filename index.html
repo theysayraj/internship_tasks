@@ -1,39 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raj Mishra | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Hi, I'm Raj Mishra</h1>
-    <p>Web Developer | Learner | Tech Enthusiast</p>
-    <img src="images/raj.jpg" alt="Profile" class="profile-photo" />
-  </header>
+  <div class="container">
+    <h1>🌦 Weather App</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button onclick="getWeather()">Get Weather</button>
 
-  <section class="skills">
-    <h2>My Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-    </ul>
-  </section>
+    <div id="weatherResult" class="result-box"></div>
+  </div>
 
-  <section class="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Stopwatch App</strong> – A simple stopwatch built using HTML, CSS, and JavaScript during my Prodigy InfoTech internship.</li>
-      <li><strong>Weather App</strong> – A weather forecasting app that fetches real-time weather using OpenWeatherMap API. Built using HTML, CSS, and JavaScript as part of Task-05 in my internship.</li>
-    </ul>
-  </section>
-
-  <footer>
-    <a href="about.html">About Me</a>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

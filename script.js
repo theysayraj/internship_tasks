@@ -1,51 +1,31 @@
-let cells = document.querySelectorAll('.cell');
-let currentPlayer = 'X';
-let gameState = ["", "", "", "", "", "", "", "", ""];
-let statusDisplay = document.getElementById('status');
-let gameActive = true;
+const apiKey = "6ca8071ba0f975456d4ddb507c983a64"; 
 
-function checkWinner() {
-    const winningCombinations = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],
-        [0, 4, 8], [2, 4, 6]
-    ];
-    for (let combination of winningCombinations) {
-        const [a, b, c] = combination;
-        if (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
-            statusDisplay.textContent = `Player ${gameState[a]} wins!`;
-            gameActive = false;
-            return;
-        }
+async function getWeather() {
+  const city = document.getElementById("cityInput").value;
+  const result = document.getElementById("weatherResult");
+
+  if (city === "") {
+    result.innerHTML = "Please enter a city name.";
+    return;
+  }
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (data.cod === "404") {
+      result.innerHTML = "City not found.";
+    } else {
+      result.innerHTML = `
+        <h3>${data.name}, ${data.sys.country}</h3>
+        <p><strong>Temperature:</strong> ${data.main.temp}°C</p>
+        <p><strong>Condition:</strong> ${data.weather[0].main}</p>
+        <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+      `;
     }
-    if (!gameState.includes("")) {
-        statusDisplay.textContent = "It's a draw!";
-        gameActive = false;
-    }
+  } catch (error) {
+    result.innerHTML = "Something went wrong.";
+  }
 }
-
-function handleCellClick(e) {
-    const index = e.target.getAttribute('data-index');
-    if (gameState[index] === "" && gameActive) {
-        gameState[index] = currentPlayer;
-        e.target.textContent = currentPlayer;
-        checkWinner();
-        if (gameActive) {
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
-        }
-    }
-}
-
-function resetGame() {
-    gameState = ["", "", "", "", "", "", "", "", ""];
-    cells.forEach(cell => cell.textContent = "");
-    currentPlayer = 'X';
-    statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
-    gameActive = true;
-}
-
-// Add event listeners to each cell
-cells.forEach(cell => cell.addEventListener('click', handleCellClick));
-
-// Optionally, you can add a reset button to call resetGame
