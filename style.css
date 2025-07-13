@@ -1,51 +1,38 @@
+
 body {
-    font-family: sans-serif;
-    text-align: center;
-    background: linear-gradient(to right, #6dd5fa, #2980b9);
-    color: #fff;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-h1 {
-    margin-top: 20px;
+header {
+  background-color: #222;
+  color: white;
+  padding: 30px 0;
 }
 
-#game {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 5px;
-    justify-content: center;
-    margin: 20px auto;
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 20px;
 }
 
-.cell {
-    width: 100px;
-    height: 100px;
-    background-color: #ffffff33;
-    font-size: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.skills, .projects {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
 }
 
-.cell:hover {
-    background-color: #ffffff55;
+footer {
+  background-color: #222;
+  color: white;
+  padding: 10px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background: #fff;
-    color: #2980b9;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-#status {
-    font-size: 20px;
-    margin: 10px;
+.container {
+  padding: 30px;
 }
