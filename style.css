@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: yellow;
+}
+
+.content {
+  height: 2000px;
+  padding-top: 100px;
+  text-align: center;
+  background: linear-gradient(#6a11cb, #2575fc);
+  color: white;
+}
